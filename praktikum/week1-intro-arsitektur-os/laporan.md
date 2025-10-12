@@ -1,25 +1,34 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu 1
+Topik: Arsitektur Dasar Operasi Sistem dan Kernel
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Alya Deviana Putri Reynaldi
+- **NIM**   : 250202928
+- **Kelas** : 1IKRB
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+Tuliskan tujuan praktikum minggu ini.
+> Mengetahui dan memahami komponen utama serta peran pada sistem operasi.
+> Bisa membandingkan beberapa model sistem operasi berdasarkan kelebihan dan kekurangan.
+> Melatih kemampuan analisis terhadap desain arsitektur operasi sistem dan bisa menggambarkan diagram arsitektur sistem operasi menggunakan alat bantu digital.
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+1. Sistem Operasi
+   Sistem Operasi adalah perangkat lunak utama yang mengelola sumber daya perangkat keras dan perangkat lunak pada komputer serta mengontrol perangkat seperti prosesor.
+2. Komponen Utama Sistem Operasi
+   Sistem Operasi terdiri dari beberapa koponen utama seperti kernel yang merupakan inti sistem operasi yang mengontrol semua aktivitas sistem dan system call menjadi jembatan antar program aplikasi dan kernel.
+3. Jenis Sistem Operassi
+   Sistem operasi memiliki beberapa jenis, antara lain batch, time sharing, real time, yang masing-masing dirancang sesuai cara kerjanya
+4. Model Arsitektur Sistem Operasi
+   Arsitektur sistem operasi dapat dibedakan menjadi beberapa model seperti monolithic, layered, dan microkernel, perbedaan ketiganya terletak pada cara komponen sistem operasi saling berinteraksi.
+
 
 ---
 
