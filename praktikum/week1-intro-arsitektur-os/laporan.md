@@ -14,7 +14,9 @@ Topik: Arsitektur Dasar Operasi Sistem dan Kernel
 ## Tujuan
 Tuliskan tujuan praktikum minggu ini.
 > Mengetahui dan memahami komponen utama serta peran pada sistem operasi.
+
 > Bisa membandingkan beberapa model sistem operasi berdasarkan kelebihan dan kekurangan.
+
 > Melatih kemampuan analisis terhadap desain arsitektur operasi sistem dan bisa menggambarkan diagram arsitektur sistem operasi menggunakan alat bantu digital.
 
 ---
