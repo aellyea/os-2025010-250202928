@@ -68,11 +68,11 @@ Sertakan screenshot hasil percobaan atau diagram:
 ## Analisis
 - Jelaskan makna hasil percobaan.
   
-  . Untuk uname -a menampilkan identifikasi informasi lengkap tentang sistem operasi dan kernel.
+  .  Untuk uname -a menampilkan identifikasi informasi lengkap tentang sistem operasi dan kernel.
   
-  . untuk lsmod | head menampilkan modul kernel yang sedang aktif dimuat di kernel.
+  .  Untuk lsmod | head menampilkan modul kernel yang sedang aktif dimuat di kernel.
   
-  . untuk dmesg | head menampilkan pesan sistem dari kernel dan mendeteksi error hardware.
+  .  Untuk dmesg | head menampilkan pesan sistem dari kernel dan mendeteksi error hardware.
   
 - Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).
   
