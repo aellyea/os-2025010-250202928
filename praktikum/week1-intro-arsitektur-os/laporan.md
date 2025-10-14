@@ -69,8 +69,11 @@ Sertakan screenshot hasil percobaan atau diagram:
 - Jelaskan makna hasil percobaan.
   
   . Untuk uname -a menampilkan identifikasi informasi lengkap tentang sistem operasi dan kernel.
+  
   . untuk lsmod | head menampilkan modul kernel yang sedang aktif dimuat di kernel.
-  . untuk dmesg | head menampilkan pesan sistem dari kernel dan mendeteksi error hardware 
+  
+  . untuk dmesg | head menampilkan pesan sistem dari kernel dan mendeteksi error hardware.
+  
 - Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).
   
 Dari hasil perintah "uname -a" menunjukkan bahwa kernel berperan sebagai inti sistem operasi yang berfungsi mengelola sumber daya perangkat keras dan juga menjadi penghubung antara perangkat keras dengan lunak.
