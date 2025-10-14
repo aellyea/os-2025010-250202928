@@ -8,7 +8,7 @@ intel_rapl_msr         16384  0
 intel_rapl_common      32768  1 intel_rapl_msr
 kvm_intel             356352  0
 kvm                   970752  1 kvm_intel
-irqbypass              12288  1 kvm
+irqbypass              12288  1 kvm_intel
 crc32c_intel           16384  0
 battery                20480  0
 ac                     16384  0
