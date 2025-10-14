@@ -23,11 +23,18 @@ Tuliskan tujuan praktikum minggu ini.
 
 ## Dasar Teori
 1. Sistem Operasi
+
    Sistem Operasi adalah perangkat lunak utama yang mengelola sumber daya perangkat keras dan perangkat lunak pada komputer serta mengontrol perangkat seperti prosesor.
+   
 2. Komponen Utama Sistem Operasi
+
    Sistem Operasi terdiri dari beberapa koponen utama seperti kernel yang merupakan inti sistem operasi yang mengontrol semua aktivitas sistem dan system call menjadi jembatan antar program aplikasi dan kernel.
-3. Jenis Sistem Operassi
-   Sistem operasi memiliki beberapa jenis, antara lain batch, time sharing, real time, yang masing-masing dirancang sesuai cara kerjanya
+   
+3. Jenis Sistem Operasi
+
+   Sistem operasi memiliki beberapa jenis, antara lain batch, time sharing, real time, yang masing-masing dirancang sesuai cara kerjanya.
+
+   
 4. Model Arsitektur Sistem Operasi
    Arsitektur sistem operasi dapat dibedakan menjadi beberapa model seperti monolithic, layered, dan microkernel, perbedaan ketiganya terletak pada cara komponen sistem operasi saling berinteraksi.
 
@@ -59,31 +66,74 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+- Jelaskan makna hasil percobaan.
+  
+  . Untuk uname -a menampilkan identifikasi informasi lengkap tentang sistem operasi dan kernel.
+  . untuk lsmod | head menampilkan modul kernel yang sedang aktif dimuat di kernel.
+  . untuk dmesg | head menampilkan pesan sistem dari kernel dan mendeteksi error hardware 
+- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).
+  
+Dari hasil perintah "uname -a" menunjukkan bahwa kernel berperan sebagai inti sistem operasi yang berfungsi mengelola sumber daya perangkat keras dan juga menjadi penghubung antara perangkat keras dengan lunak.
+
+untuk perintah "dmesg | head" sistem memanggil system call untuk membaca pesan log kernel ini membuktikan adanya lapisan komunikasi antara user space dan kernel space karena system call berfungsi sebagai jembatan antara program pengguna dengan fungsi-fungsi kernel, contohnya adalah membaca file log.
+
+  Hasil percobaan untuk os bekerja secara berlapis, perintah dari pengguna diproses melalui system call menuju kernel untuk mengatur sumber daya dan kembali lagi ke user space.
+
+
+- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?
+
+ Pada Linux, perintah seperti uname -a, lsmod, dan dmesg bisa langsung menampilkan informasi detail tentang kernel, modul, serta proses booting karena Linux bersifat open source dan berbasis kernel monolitik yang memberi akses lebih langsung ke lapisan kernel. Sementara itu, di Windows perintah tersebut hanya bisa diakses lewat system Information atau Event Viewer, hasil di windows lebih terbatas.
 
 ---
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 
+Dari praktikum ini dapat disimpulkan bahwa sistem operasi berfungsi mengelola dan mengoordinasikan sumber daya komputer, seperti prosesor, memori, dan perangkat I/O, agar seluruh proses dapat berjalan dengan efisien.
+
+Melalui perintah uname -a, lsmod, dan dmesg, dapat diketahui bahwa kernel merupakan inti dari sistem operasi yang menangani identifikasi sistem, pengelolaan modul kernel, serta pencatatan pesan sistem selama proses booting dan operasi berjalan.
+
+Hasil percobaan menunjukkan bahwa komunikasi antara user space dan kernel space terjadi melalui system call, yang menjadi jembatan bagi program pengguna untuk berinteraksi dengan fungsi-fungsi penting di dalam kernel tanpa mengakses perangkat keras secara langsung.
+
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Sebutkan tiga fungsi utama sistem operasi.
+ 
+   **Jawaban:**
 
----
+   1. Manajemen Proses
+      
+      Mengatur eksekusi program dan proses agar berjalan seacara efisien.
+   2. Manajemen Memori
+      
+      Mengalokasikan dan memantau penggunaan RAM serta memori virtual.
+      
+   3. Manajemen Perangkat
+      
+      Mengontrol perangkat input/output seperti keyboard, mouse, printer dan jaringan.
+      
+2. Jelaskan perbedaan antara kernel mode dan user mode.
+   
+   **Jawaban:**
 
+   Kernel mode adalah mode eksekusi dalam sistem operasi yang memiliki hak akses tertinggi, memungkinkan sistem untuk berinteraksi langsung dengan seluruh sumber daya perangkat keras seperti prosesor, memori, dan perangkat I/O, serta menjalankan fungsi-fungsi inti seperti manajemen memori, penjadwalan proses, dan pengendalian perangkat; sedangkan user mode adalah mode dengan hak akses terbatas yang digunakan oleh program aplikasi agar tetap terisolasi dari sistem inti, sehingga jika terjadi kesalahan pada aplikasi, tidak akan mempengaruhi kestabilan atau keamanan sistem operasi secara keseluruhan.
+   
+3. Sebutkan contoh OS dengan arsitektur monolithic dan microkernel
+   
+   **Jawaban:**
+
+    Contoh OS arsitektur monolithic adalah MS-DOS, UNIX, Linux
+   
+    Contoh OS arsitektur microkernel  adalah Mach, QNX, Minix, L4 MIcrokernel Familu
+
+--
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini?
+  Bagian yang paling menantang minggu ini adalah ketika saya kurang teliti saat mengerjakan langkah-langkah praktikum, sehingga harus mengulang pekerjaan dua kali untuk mendapatkan hasil yang benar.
+- Bagaimana cara Anda mengatasinya?
+  Cara saya mengatasinya adalah dengan lebih berhati-hati dan memastikan setiap langkah sudah benar sebelum dijalankan, serta menyimpan file hasil pekerjaan secara berkala agar tidak kehilangan data dan bisa diperbaiki dengan mudah jika terjadi kesalahan.
 
 ---
 
