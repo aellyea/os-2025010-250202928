@@ -131,9 +131,11 @@ Hasil percobaan menunjukkan bahwa komunikasi antara user space dan kernel space 
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?
+
   Bagian yang paling menantang minggu ini adalah ketika saya kurang teliti saat mengerjakan langkah-langkah praktikum, sehingga harus mengulang pekerjaan dua kali untuk mendapatkan hasil yang benar.
 - Bagaimana cara Anda mengatasinya?
-  Cara saya mengatasinya adalah dengan lebih berhati-hati dan memastikan setiap langkah sudah benar sebelum dijalankan, serta menyimpan file hasil pekerjaan secara berkala agar tidak kehilangan data dan bisa diperbaiki dengan mudah jika terjadi kesalahan.
+
+   Cara saya mengatasinya adalah dengan lebih berhati-hati dan memastikan setiap langkah sudah benar sebelum dijalankan, serta menyimpan file hasil pekerjaan secara berkala agar tidak kehilangan data dan bisa diperbaiki dengan mudah jika terjadi kesalahan.
 
 ---
 
