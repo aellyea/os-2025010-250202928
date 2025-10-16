@@ -1,20 +1,21 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu 2
+Topik: Mekanisme System Call dan Struktur Sistem Operasi.
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Alya Deviana Putri Reynaldi 
+- **NIM**   : 250202928	
+- **Kelas** : 1IKRB
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+- Memahami konsep dan struktur alur mekanisme dari system call.
+- Mengamati proses komunikasi dari aplikasi (user space) ke kernel melalui system call.
+- Mengklasifikasikan berbagai jenis sytem call.
+- Meningkatkan kemampuan teknis dalam lingkungan linux.
 
 ---
 
@@ -24,19 +25,15 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
-
+1. Menyiapkan linux (Ubuntu/WSL) dan memastikan strace 
 ---
 
 ## Kode / Perintah
 Tuliskan potongan kode atau perintah utama:
 ```bash
-uname -a
-lsmod | head
-dmesg | head
+strace ls
+strace -e trace=open,read,write,close cat /etc/passwd
+dmesg | tail -n 10
 ```
 
 ---
