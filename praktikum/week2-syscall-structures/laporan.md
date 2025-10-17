@@ -57,12 +57,77 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Apa fungsi utama system call dalam sistem operasi
+
+    **Jawaban:**
+
+Penghubung antara aplikasi dan kernel
+
+→ System call menjadi antarmuka resmi agar program bisa berinteraksi dengan sumber daya sistem tanpa perlu mengaksesnya langsung.
+
+Pengelolaan sumber daya (Resource Management)
+
+→ System call memungkinkan aplikasi untuk menggunakan CPU, memori, dan perangkat I/O secara efisien dengan pengaturan dari kernel.
+
+Keamanan dan kontrol akses
+
+→ Melalui system call, kernel memeriksa izin setiap operasi agar program tidak bisa mengakses data atau perangkat tanpa otorisasi.
+
+Komunikasi antara proses (Interprocess Communication)
+→ System call menyediakan mekanisme agar proses dapat saling bertukar data atau pesan secara aman.
+
+Penanganan perangkat keras
+
+→ Aplikasi tidak berinteraksi langsung dengan hardware; system call yang meneruskan permintaan ke driver perangkat.
+
+Menjaga stabilitas sistem
+
+→ Dengan system call, semua interaksi user dengan kernel dilakukan secara terkendali, sehingga kesalahan pada aplikasi tidak merusak keseluruhan sistem operasi.
+   
+2. Sebutkan 4 kategori system call yang umum digunakan. 
+
+    **Jawaban:**
+
+System Call Manajemen Proses (Process Control)
+
+→ Digunakan untuk membuat, menghapus, atau mengatur proses.
+
+Contoh: fork(), exec(), exit(), wait()
+
+Fungsi: memungkinkan sistem menjalankan program baru, menghentikan proses, atau menunggu proses lain selesai.
+
+System Call Manajemen Berkas (File Management)
+
+→ Digunakan untuk mengatur operasi pada file dan direktori.
+
+Contoh: open(), read(), write(), close(), unlink()
+
+Fungsi: memungkinkan aplikasi untuk menyimpan, membaca, menulis, atau menghapus data pada penyimpanan.
+
+System Call Manajemen Perangkat (Device Management)
+
+→ Digunakan untuk mengontrol dan berkomunikasi dengan perangkat input/output.
+
+Contoh: ioctl(), read(), write()
+
+Fungsi: memberikan akses terkontrol agar aplikasi bisa menggunakan perangkat keras seperti keyboard, printer, atau disk.
+
+System Call Manajemen Informasi (Information Maintenance)
+
+→ Digunakan untuk menyediakan informasi tentang sistem, proses, atau waktu.
+
+Contoh: getpid(), alarm(), time(), getuid()
+
+Fungsi: memberi data penting seperti ID proses, waktu sistem, atau informasi pengguna.
+
+   
+3. Mengapa system call tidak bisa dipanggil langsung oleh user program?
+
+   **Jawaban:**
+
+    System call tidak dapat dipanggil langsung oleh program pengguna karena alasan keamanan, stabilitas, dan desain sistem operasi. CPU membedakan level akses antara user mode (ring 3) dan kernel mode (ring 0) untuk mencegah program biasa menjalankan instruksi berprivilege tinggi yang dapat merusak sistem. Dengan mewajibkan setiap permintaan melewati kernel, sistem dapat memvalidasi parameter, memeriksa izin, dan mencegah akses tidak sah yang berpotensi menyebabkan serangan atau kebocoran data.
+   
+   Selain itu, mekanisme ini menjaga stabilitas dan konsistensi karena kernel menangani pengelolaan sumber daya dan penanganan kesalahan secara terpusat. System call juga berfungsi sebagai lapisan abstraksi yang memisahkan aplikasi dari detail perangkat keras, sehingga meningkatkan portabilitas dan memudahkan pembaruan keamanan tanpa mengubah aplikasi. Oleh karena itu, dipastikan bahwa setiap interaksi dengan sistem dilakukan melalui jalur yang aman, terkontrol, dan efisien.
 
 ---
 
