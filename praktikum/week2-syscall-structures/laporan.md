@@ -78,7 +78,8 @@ dmesg | tail -n 10
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](syscall-diagram.png)
+![Screenshot hasil](screenshots/syscall-diagram.png)
+
 
 ---
 
