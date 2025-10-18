@@ -25,7 +25,30 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ---
 
 ## Langkah Praktikum
-1. Menyiapkan linux (Ubuntu/WSL) dan memastikan strace 
+Menyiapkan lingkungan Linux (Ubuntu/WSL) dan memastikan paket `strace`, `man`, serta `git` sudah terinstal dengan benar.
+
+Membuka terminal dan menjalankan perintah `strace ls` untuk mengamati daftar system call yang digunakan oleh perintah `ls`.
+
+Mencatat dan menganalisis 5–10 system call pertama yang muncul, kemudian menyimpannya dalam file `results/syscall_ls.txt`.
+
+Melakukan pengamatan terhadap system call pada operasi file I/O menggunakan perintah `strace -e trace=open,read,write,close cat /etc/passwd`.
+
+Mengidentifikasi urutan eksekusi system call `open`, `read`, `write`, dan `close` yang terjadi selama proses pembacaan file.
+
+Menjalankan perintah `dmesg | tail -n 10` untuk mengamati aktivitas kernel dan membedakan log kernel dengan output program biasa.
+
+Membuat diagram alur system call yang menggambarkan perpindahan dari mode user ke mode kernel dan kembali lagi.
+
+Menyimpan diagram hasil observasi ke dalam folder `screenshots/syscall-diagram.png`.
+
+Mengumpulkan seluruh hasil percobaan (file, diagram, dan analisis) ke dalam folder `praktikum/week2-syscall-structure/`.
+
+Melakukan commit dan push hasil akhir ke repositori GitHub dengan pesan:
+  ```bash
+   git add .
+   git commit -m "Minggu 2 - Struktur System Call dan Kernel Interaction"
+   git push origin main
+   ```
 ---
 
 ## Kode / Perintah
@@ -74,6 +97,7 @@ Keamanan dan kontrol akses
 → Melalui system call, kernel memeriksa izin setiap operasi agar program tidak bisa mengakses data atau perangkat tanpa otorisasi.
 
 Komunikasi antara proses (Interprocess Communication)
+
 → System call menyediakan mekanisme agar proses dapat saling bertukar data atau pesan secara aman.
 
 Penanganan perangkat keras
