@@ -125,6 +125,7 @@ Analisis dari `dmesg | tail -n 10`
 
 Program biasa seperti `ls` atau `cat` hanya menampilkan hasil operasi pada level user. Jadi, `dmesg` menunjukkan aktivitas yang terjadi di dalam kernel space, sedangkan program biasa hanya berinteraksi melalui system call tanpa akses langsung ke kernel.
 
+
 ---
 
 **Pentingnya System Call untuk Keamanan Sistem Operasi.**
