@@ -20,7 +20,22 @@ Topik: Mekanisme System Call dan Struktur Sistem Operasi.
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+
+Analisis System Call dengan `strace`
+
+`strace` adalah alat diagnostik di Linux yang digunakan untuk melacak semua system call yang dilakukan oleh suatu program.
+
+Pemantauan Aktivitas Kernel dengan `dmesg`
+
+Perintah `dmesg` menampilkan pesan log dari kernel, terutama yang berkaitan dengan perangkat keras, driver, dan aktivitas sistem dan bisa membedakan aktivitas internal kernel dari output biasa program di user space.
+
+Proses Komunikasi User Space ke Kernel Space
+
+Ketika aplikasi menjalankan perintah seperti `ls` atau `cat`, program tidak langsung mengakses perangkat keras tetapi memanggil system call yang kemudian diteruskan ke kernel.
+
+Manajemen File I/O melalui System Call
+
+Operasi dasar seperti `open()`, `read()`, `write()`, dan `close()` digunakan untuk mengakses file agar proses I/O dilakukan secara aman, efisien, dan terkontrol.
 
 ---
 
@@ -52,7 +67,7 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
+
 ```bash
 strace ls
 strace -e trace=open,read,write,close cat /etc/passwd
@@ -283,15 +298,20 @@ Fungsi: memberi data penting seperti ID proses, waktu sistem, atau informasi pen
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+1. System call berperan sebagai jembatan aman antara program pengguna (user space) dan kernel dalam mengakses sumber daya sistem.
+
+2. Melalui percobaan dengan `strace`, terbukti bahwa setiap operasi sederhana seperti membuka atau membaca file melibatkan serangkaian system call yang dikontrol penuh oleh kernel.
+
+3. Mekanisme ini menjamin keamanan, stabilitas, dan efisiensi sistem operasi dengan memastikan hanya kernel yang memiliki hak akses langsung ke perangkat keras.
 
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini?  Berusaha memahami urutan system call dan membaca output dari strace dengan sangat lama karena tampilannya sangat detail.
+- Bagaimana cara Anda mengatasinya?  Melihat hasil `strace` serta mencari referensi dokumentasi system call sehingga bisa memahami sedikit demi sedikit fungsi setiap panggilan secara lebih jelas.
 
 ---
 
