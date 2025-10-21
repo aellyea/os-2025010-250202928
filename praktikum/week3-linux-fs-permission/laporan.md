@@ -1,21 +1,21 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu 3
+Topik: Konsep Ownership dan Permission dalam Manajemen File di Linux
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Alya Deviana Putri Reynaldi
+- **NIM**   : 250202928
+- **Kelas** : 1IKRB
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
-
+1. Memahami konsep dasar sistem file pada linux, yaitu struktur direktori dan hubungan antar folder.
+2. Mengoperasikan perintah-perintah linux untuk menavigasi, menampilkan, dan membaca isi file maupun direktori.
+3. Mengidentifikasi serta menginterpretasikan hak akses dan kepemilikan file di sistem Linux.
+4. Menganalisis hasil percobaan dan mendokumentasikan
 ---
 
 ## Dasar Teori
@@ -32,14 +32,27 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
+
+Eksperimen 1 - Navigasi Sistem File
 ```bash
-uname -a
-lsmod | head
-dmesg | head
+pwd
+ls -l
+cd /tmp
+ls -a
 ```
 
----
+Eksperimen 2 - Membaca file
+```bash
+cat /etc/passwd | head -n 5
+```
+Eksperimen 3 - Permission & Ownership 
+```bash
+echo "Hello <NAME><NIM>" > percobaan.txt
+ls -l percobaan.txt
+chmod 600 percobaan.txt
+ls -l percobaan.txt
+```
+
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
