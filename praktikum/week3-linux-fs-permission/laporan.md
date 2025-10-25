@@ -76,8 +76,9 @@ ls -l percobaan.txt
 
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshot](screenshots/Hasil%20Eksekusi.png)
+
+
 
 ---
 
