@@ -55,6 +55,7 @@ Tuliskan potongan kode atau perintah utama:
 uname -a
 lsmod | head
 dmesg | head
+
 ```
 
 ---

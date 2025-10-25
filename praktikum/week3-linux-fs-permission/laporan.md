@@ -1,45 +1,79 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu 3
+Topik: Konsep Ownership dan Permission dalam Manajemen File di Linux
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Alya Deviana Putri Reynaldi
+- **NIM**   : 250202928
+- **Kelas** : 1IKRB
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
-
+1. Memahami konsep dasar sistem file pada linux, yaitu struktur direktori dan hubungan antar folder.
+2. Mengoperasikan perintah-perintah linux untuk menavigasi, menampilkan, dan membaca isi file maupun direktori.
+3. Mengidentifikasi serta menginterpretasikan hak akses dan kepemilikan file di sistem Linux.
+4. Bisa menganalisis hasil percobaan dan mendokumentasikannya
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+
+
+**1. Sistem File Linux**
+
+Sistem file linux menggunakan struktur hierarki dengan direktori `root (/)` yaitu perintah navigasi seperti ``pwd`` , ``ls`` , ``cd`` yang mengorganisir akses ke sumber daya sistem.
+
+**2. Peran Keamanan dalam Manajemen File**
+
+Permission dan ownership berperan banyak dalam keamanan Linux yaitu, mencegah modifikasi tidak sah atau eksekusi kode berbahaya yang mendukung prinsip least privilage untuk melindungi sistem dari ancaman eksternal.
+
+**3. Peran Permission**
+
+Permission ini mencegah akses tidak sah dan memastikan keamanan, dengan perintah ``chmod`` digunakan untuk mengubahnya, direpresentasikan dalam format oktal atau simbolik.
+
+**4. Ownership dan Kepemilikan**
+
+Kepemilikan bisa diubah dengan perintah chown (mengganti pemilik) dan chgrp (mengganti grup) yang gunanya agar file penting hanya bisa diakses oleh pengguna yang diizinkan mengakses.
+
+**5. File Tersembunyi**
+
+File tersembunyi dimulai dengan titik ``e.g., .bashrc`` , yang dapat dilihat dengan ``ls -a`` untuk menyimpan konfigurasi sistem tanpa mengganggu tampilan umum, mendukung efisiensi navigasi dan pengelolaan direktori.
+
 
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1. Menjalankan semua eksperimen sesuai perintah tugas praktikum di Ubuntu/WSL
+2. Menganalisis hasil tiap perintah dan mendokumentasikan seluruh perintah pada tabel observasi.
+3. Mengerjakan tugas dan quiz
+4. Setelah semua sudah lengkap, commit dan push di GitHub.
 
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
+
+Eksperimen 1 - Navigasi Sistem File
 ```bash
-uname -a
-lsmod | head
-dmesg | head
+pwd
+ls -l
+cd /tmp
+ls -a
 ```
 
----
+Eksperimen 2 - Membaca file
+```bash
+cat /etc/passwd | head -n 5
+```
+Eksperimen 3 - Permission & Ownership 
+```bash
+echo "Hello <NAME><NIM>" > percobaan.txt
+ls -l percobaan.txt
+chmod 600 percobaan.txt
+ls -l percobaan.txt
+```
+
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
@@ -48,9 +82,74 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+
+ ## Eksperimen 1 - Navigasi Sistem File
+
+| No | Perintah  | Hasil Output                                                                                | Analisis                                                                                                                                                                                                     |
+| -- | --------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1  | `pwd`     | `/home/aelyea`                                                                                        | Menampilkan file aktif saat ini.                                                                                                                               |
+| 2  | `ls -l`   | `total 0`                                                                                             | Menunjukkan isi folder kosong yaitu tidak ada file.                                                                                                                                            |
+| 3  | `cd /tmp` | tidak ada output                                                                                  | Berpindah ke direktori `/tmp`, yaitu folder sementara di sistem Linux.                                                                                                                                       |
+| 4  | `ls -a`   | Menampilkan: `.`, `..`, `.X11-unix`, `snap-private-tmp`, dan lain lain | `ls -a` menampilkan semua file termasuk **file tersembunyi** (yang diawali titik `.`). Folder `.` berarti direktori saat ini, `..` berarti direktori induk. Folder `.X11-unix` dan lainnya adalah file sistem sementara. |
+
+## Eksperimen 2 - Membaca file
+
+| No                                              | Perintah                                                                                                            | Hasil Output  | Analisis                                                                                               |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| 1                                               | `cat /etc/passwd \| head -n 5`                                                                                      | ```                    |                                                                                                                    |
+| root:x:0:0:root:/root:/bin/bash                 |                                                                                                                     |                        |                                                                                                                    |
+| daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin |                                                                                                                     |                        |                                                                                                                    |
+| bin:x:2:2:bin:/bin:/usr/sbin/nologin            |                                                                                                                     |                        |                                                                                                                    |
+| sys:x:3:3:sys:/dev:/usr/sbin/nologin            |                                                                                                                     |                        |                                                                                                                    |
+| sync:x:4:65534:sync:/bin:/bin/sync              |                                                                                                                     |                        |                                                                                                                    |
+             
+              
+  **Isi File ``/etc/passwd``**
+Berisi daftar seluruh akun pengguna yang ada di sistem Linux, baik user biasa maupun sistem yang tiap barisnya mewakili satu akun pengguna.
+
+1. username → Nama pengguna (contoh: ``root``, ``daemon``).
+
+2. password → ditandai dengan ``x`` artinya password disimpan terenkripsi di file lain (``/etc/shadow``).
+
+3. UID (User ID) → Nomor identitas unik untuk setiap pengguna. ``0`` adalah UID untuk root (administrator).
+
+4. GID (Group ID) → Nomor identitas grup tempat user tersebut tergabung.
+
+5. user info → Informasi tambahan tentang pengguna, biasanya nama lengkap atau deskripsi.
+
+6. home directory → Lokasi direktori pribadi user (``home/user``)
+
+7. shell → Program shell yang dijalankan saat user login (``/usr/sbin/nologin``)
+
+
+
+## Eksperimen 3 - Permission & Ownership
+
+| No | Perintah                                                                | Hasil                                             | Analisis                                                                                                                                 |
+| -- | ----------------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 1  | `echo "Hello <Alya Deviana Putri Reynaldi><250202928>" > percobaan.txt` | Membuat file baru bernama `percobaan.txt`.                 | File berhasil dibuat di direktori `/tmp` dengan isi teks yang ditentukan.                                                                |
+| 2  | `ls -l percobaan.txt`                                                   | `-rw-r--r-- 1 aelyea aelyea 47 Oct 21 17:01 percobaan.txt` | Permission awal: rw-r--r--, artinya pemilik bisa membaca dan mengedit, sedangkan grup dan lainnya hanya bisa membaca.                |
+| 3  | `chmod 600 percobaan.txt`                                               | *(tidak ada output)*                                       | Mengubah izin file menjadi hanya bisa diakses pemilik.                                                                |
+| 4  | `ls -l percobaan.txt`                                                   | `-rw------- 1 aelyea aelyea 47 Oct 21 17:01 percobaan.txt` | Permission berubah menjadi rw-------, hanya pemilik yang bisa membaca dan menulis file; grup dan pengguna lain tidak memiliki akses. |
+
+
+| Kondisi             | Permission   | Keterangan                                                                                            |
+| ------------------- | ------------ | ----------------------------------------------------------------------------------------------------- |
+| Sebelum `chmod 600` | `-rw-r--r--` | Pemilik bisa membaca dan menulis, grup dan pengguna lain hanya bisa membaca.                          |
+| Sesudah `chmod 600` | `-rw-------` | Hanya pemilik yang bisa membaca dan menulis, grup dan pengguna lain tidak memiliki akses sama sekali. |
+
+
+| Perintah                        | Hasil                                        | Analisis                                                                                       |
+| ------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `sudo chown root percobaan.txt` | Kepemilikan file berubah menjadi `root pemilik`.          | Perintah `chown` mengubah pemilik file menjadi user root, sementara grup tetap milik pemilik. |
+| `ls -l percobaan.txt`           | `-rw------- 1 root aelyea 47 Oct 21 17:01 percobaan.txt` | Menunjukkan bahwa file sekarang dimiliki oleh root, dengan permission tetap `rw-------`.   |
+
+
+
+
+
+
+
 
 ---
 
@@ -60,19 +159,78 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Apa fungsi dari perintah ``chmod``
+
+**Jawaban:**
+
+
+
+Mengubah izin akses (permission) suatu file atau direktori dan memberi kontrol penuh ke pemilik file di Linux.
+
+Menjaga kerahasiaan data dan melindungi file dari akses yang tidak dikenali.
+
+Mendukung format izin simbolik maupun numerik.
+   
+
+2. Apa arti dari kode permission ``rwxr-xr--``?
+
+**Jawaban:**  
+
+>   ``rwx`` (owner)
+   
+   
+   ``r`` = (read) bisa membaca file
+   
+   ``w`` = (write) bisa mengedit file
+   
+   ``x`` = (execute) bisa menjalankan file
+   
+
+
+
+>  ``r-x`` (group)
+   
+   
+   ``r`` = bisa membaca file
+   
+   ``-`` = tidak bisa mengedit file
+     
+   ``x`` = bisa menjalankan file
+  
+
+> ``r--`` (others)
+   
+
+ ``r``= bisa membaca file
+   
+  ``-`` = tidak bisa mengedit file
+     
+   ``-`` = tidak bisa menjalankan file
+   
+
+  
+   ``rwxr-xr--`` artinya adalah (owner) pemilik mempunyai akses penuh file, untuk grup (group) bisa membaca dan menjalankan, sedangkan untuk (others) orang lain hanya bisa membaca.
+
+   3. Jelaskan perbedaan antara ``chown`` dan ``chmod``
+      
+  **Jawaban:**
+
+``chown`` artinya ``change owner`` yang berfungsi untuk mengubah kepemilikan file.
+
+``chmod`` artinya ``change mode`` yang berfungsi untuk mengubah izin akses file.
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini?
+
+Sedikit sulit memahami permission dan ownership di Linux karena logikanya sulit dan materinya dalam.
+
+- Bagaimana cara Anda mengatasinya?
+
+Fokus mempelajari secara bertahap dengan eksperimen berulang dan mencari referensi tambahan dari internet untuk memperluas pemahaman.
+  
 
 ---
 

@@ -77,7 +77,8 @@ dmesg | tail -n 10
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
+Diagram:
+
 ![Screenshot hasil](screenshots/syscall-diagram.png)
 
 
@@ -90,6 +91,10 @@ Sertakan screenshot hasil percobaan atau diagram:
 # Tabel Observasi
 
 Analisis dari `strace ls`
+
+![Screenshot hasil](screenshots/strace%20ls..png)
+
+
 | No | Nama System Call | Kegunaan | Penjelasan |
 |----|------------------|-----------------------------|-------------------------------|
 | 1  | execve()         | Menjalankan program `ls`. | Pertama kali dipanggil untuk mengeksekusi perintah. |
@@ -105,6 +110,9 @@ Analisis dari `strace ls`
 
 Analisis dari `strace -e trace=open,read,write,close cat /etc/passwd`
 
+![Screenshot hasil](screenshots/strace%20e-.png)
+
+
 | No | System Call | Kegunaan | Penjelasan |
 |----|--------------|-----------------------------|-------------------------------|
 | 1  | open()       | Membuka file `/etc/passwd`. | File berhasil dibuka untuk dibaca. |
@@ -115,6 +123,9 @@ Analisis dari `strace -e trace=open,read,write,close cat /etc/passwd`
 Pada percobaan `strace -e trace=open,read,write,close cat /etc/passwd`, kernel berperan sebagai perantara utama dalam proses akses file. Program `cat` terlebih dahulu memanggil system call `open()` untuk membuka file dan mendapatkan izin akses, kemudian `read()` digunakan untuk membaca isi file dari disk dan menyalinnya ke memori. Data yang telah dibaca kemudian dikirim ke terminal melalui `write()`, dan setelah seluruh isi file berhasil ditampilkan, kernel menutup file dengan `close()` guna melepaskan sumber daya yang digunakan.
 
 Analisis dari `dmesg | tail -n 10`
+
+![Screenshot hasil](screenshots/dmesg..png)
+
 | No | Output Log Kernel | Penjelasan |
 |----|--------------------|---------------------------|
 | 1  | [1234.567890] usb 1-2: new device found | Kernel mendeteksi perangkat USB baru. |
@@ -124,6 +135,7 @@ Analisis dari `dmesg | tail -n 10`
 | 5  | [1234.571000] audit: user pid=1000 comm="bash" | Kernel mencatat aktivitas proses bash. |
 
 Program biasa seperti `ls` atau `cat` hanya menampilkan hasil operasi pada level user. Jadi, `dmesg` menunjukkan aktivitas yang terjadi di dalam kernel space, sedangkan program biasa hanya berinteraksi melalui system call tanpa akses langsung ke kernel.
+
 
 ---
 
