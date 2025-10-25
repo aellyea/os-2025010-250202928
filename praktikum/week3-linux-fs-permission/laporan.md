@@ -80,6 +80,7 @@ ls -l percobaan.txt
 
 
 
+
 ---
 
 ## Analisis
