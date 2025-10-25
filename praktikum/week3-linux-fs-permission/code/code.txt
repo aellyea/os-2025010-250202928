@@ -1,0 +1,27 @@
+aelyea@saturnkissess:~$ pwd
+/home/aelyea
+aelyea@saturnkissess:~$ ls -l
+total 0
+aelyea@saturnkissess:~$ cd /tmp
+aelyea@saturnkissess:/tmp$ ls -a
+.                 systemd-private-5854f56353ec4257a587ac41248a7f00-systemd-logind.service-1vkGd8
+..                systemd-private-5854f56353ec4257a587ac41248a7f00-systemd-resolved.service-vNPpvT
+.X11-unix         systemd-private-5854f56353ec4257a587ac41248a7f00-systemd-timesyncd.service-bPEbc2
+snap-private-tmp
+aelyea@saturnkissess:/tmp$ cat /etc/passwd | head -n 5
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+aelyea@saturnkissess:/tmp$ echo "Hello <ALYA DEVIANA PUTRI REYNALDI><250202928>" > percobaan.txt
+aelyea@saturnkissess:/tmp$ ls -l percobaan.txt
+-rw-r--r-- 1 aelyea aelyea 47 Oct 25 18:38 percobaan.txt
+aelyea@saturnkissess:/tmp$ chmod 600 percobaan.txt
+aelyea@saturnkissess:/tmp$ ls -l percobaan.txt
+-rw------- 1 aelyea aelyea 47 Oct 25 18:38 percobaan.txt
+aelyea@saturnkissess:/tmp$ sudo chown root percobaan.txt
+[sudo] password for aelyea:
+aelyea@saturnkissess:/tmp$ ls -l percobaan.txt
+-rw------- 1 root aelyea 47 Oct 25 18:38 percobaan.txt
+aelyea@saturnkissess:/tmp$
