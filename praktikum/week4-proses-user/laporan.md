@@ -1,43 +1,115 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu 4
+Topik: Manajemen Proses dan User di Linux
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Alya Deviana Putri Reynaldi
+- **NIM**   : 205202928
+- **Kelas** : 1IKRB
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+> Mengetahui cara kerja sistem Linux dalam menangani proses dan akun pengguna.
+
+> Mengamati aktivitas proses yang sedang berlangsung di sistem.
+
+> Melakukan pembuatan dan pengelolaan user menggunakan perintah dasar Linux.
+
+> Memahami peran manajemen pengguna dalam menjaga keamanan dan kontrol akses sistem.
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+**1. Proses dalam Sistem Linux**
+
+Setiap aplikasi atau perintah yang dijalankan di Linux disebut proses. Sistem akan memberi setiap proses sebuah nomor unik yang disebut PID (Process ID) agar bisa dikenali dan dikelola. Proses bisa berjalan di latar depan maupun latar belakang. Linux mendukung banyak proses berjalan bersamaan dengan sistem penjadwalan (scheduler) yang mengatur waktu eksekusinya. Perintah seperti ``ps``, ``top``, dan ``kill`` dipakai untuk memantau serta mengatur proses tersebut.
+
+**2. Struktur dan Hierarki Proses**
+
+Semua proses di Linux memiliki induk (parent process), dan dari induk tersebut dapat muncul anak proses (child process). Hierarki ini dapat dilihat dengan perintah ``pstree``, yang menampilkan hubungan antars proses dalam bentuk pohon. Proses paling awal yang berjalan setelah sistem menyala adalah systemd (atau init pada sistem lama), yang menjadi dasar bagi semua proses lain.
+
+**3. Pengguna dan Grup**
+
+Linux adalah sistem multiuser, artinya bisa digunakan oleh banyak pengguna dalam satu waktu. Setiap akun pengguna memiliki identitas berupa UID, sedangkan grup memiliki GID. Manajemen pengguna dilakukan untuk mengatur hak dan ruang lingkup akses. Perintah seperti ``adduser``, ``passwd``, ``id``, dan ``groups`` digunakan untuk membuat serta memeriksa akun atau grup pengguna.
+
+**4. Hak Akses dan Keamanan**
+
+Setiap file di Linux dilindungi oleh sistem izin (permission) yang menentukan siapa yang boleh membaca, menulis, atau menjalankan file tersebut. Pengaturan ini ditandai dengan kombinasi huruf ``r``, ``w``, dan ``x``. Dengan pengelolaan user dan hak akses yang baik, administrator dapat mencegah penyalahgunaan sistem serta menjaga stabilitas dan keamanan data.
+
 
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1. Menjalankan perintah dasar untuk mengetahui identitas dan hak akses pengguna di Linux.
+2. Melakukan percobaan untuk memantau proses yang sedang berjalan di sistem.
+3. Mengontrol proses dengan menjalankan dan menghentikan program tertentu melalui terminal.
+4. Menganalisis hierarki proses untuk mengenali hubungan antar proses dan mengerjakan berbagai perintah di langkah pengerjaan dengan lengkap.
+5. Mengerjakan tugas & quiz sesuai dengan menjawab pertanyaan terkait proses dan manajemen user.
+6. Mendokumentasikan seluruh hasil praktikum dan mengunggahnya ke repositori Git dengan commit message yang digunakan.
 
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
+**Eksperimen 1 – Identitas User**
+
 ```bash
-uname -a
-lsmod | head
-dmesg | head
+whoami
+id
+groups
 ```
+Membuat user baru 
+``` bash
+sudo adduser praktikan
+sudo passwd praktikan
+```
+---
+
+
+**Eksperimen 2 – Monitoring Proses**
+
+```bash
+ps aux | head -10
+top -n 1
+```
+---
+
+
+**Eksperimen 3 – Kontrol Proses**
+Menjalankan program latar belakang 
+```bash
+sleep 1000 &
+ps aux | grep sleep
+```
+
+Menghentikan proses
+```bash
+kill <PID>
+```
+
+Memastikan proses telah berhenti dengan 
+```bash
+ps aux | grep sleep
+```
+---
+
+
+**Eksperimen 4 – Analisis Hierarki Proses**
+```bash
+pstree -p | head -20
+```
+---
+
+
+**Commit dan push**
+```bash
+git add .
+git commit -m "Minggu 4 - Manajemen Proses & User"
+git push origin main
+```
+
 
 ---
 
