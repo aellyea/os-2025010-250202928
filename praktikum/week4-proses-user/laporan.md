@@ -120,16 +120,94 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+EKSPERIMEN 1 - IDENTITAS USER
+
+| Perintah | Output  | Fungsi / Penjelasan |
+|-----------|-----------------|---------------------|
+| `whoami` | `aelyea` | Menampilkan nama user yang sedang login ke sistem. |
+| `id` | `uid=1000(aelyea) gid=1000(aelyea) groups=1000(aelyea),4(adm),27(sudo),46(plugdev)` | Menampilkan informasi lengkap user seperti UID (User ID), GID (Group ID), dan grup yang diikuti. |
+| `groups` | `aelyea adm dialout cdrom floppy sudo audio dip video plugdev netdev` | Menampilkan daftar grup tempat user tergabung. |
 
 ---
+
+EKSPERIMEN 2 - MONITORING USER
+| Kolom       | Penjelasan                                                                             |
+| ----------- | -------------------------------------------------------------------------------------- |
+| **PID**     | Menandakan identitas unik setiap proses yang aktif di sistem.                          |
+| **USER**    | Menunjukkan siapa pemilik atau akun yang menjalankan proses tersebut.                  |
+| **%CPU**    | Menggambarkan seberapa besar kapasitas prosesor yang sedang digunakan oleh proses itu. |
+| **%MEM**    | Menunjukkan jumlah penggunaan memori relatif terhadap total RAM yang tersedia.         |
+| **COMMAND** | Menampilkan nama program atau perintah yang memicu proses berjalan.                    |
+
+---
+EKSPERIMEN 3 - KONTROL PROSES
+
+PID PROSES ``sleep`` 2541
+y        2541  0.0  0.0   2600   600 pts/0    S    00:15   0:00 sleep 1000
+
+---
+
+EKSPERIMEN 4 - ANALISIS HIERARKI PROSES
+Hasil pengamatan hierarki proses:
+
+Proses induk yang terdeteksi adalah **systemd (PID 1)**.  
+
+---
+
+
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+1. Setiap user di Linux memiliki identitas unik (UID dan GID) serta tergabung dalam beberapa grup yang menentukan hak aksesnya.  
+2. Proses di Linux dapat dimonitor dan dikendalikan menggunakan perintah seperti `ps`, `top`, dan `kill`, yang membantu mengelola kinerja sistem.  
+3. Semua proses di sistem Linux berawal dari proses induk utama, yaitu `systemd`, yang bertugas memulai dan mengatur seluruh proses lainnya.
+
 
 ---
+## TUGAS
+## Fungsi Tiap Perintah
+
+| Perintah | Fungsi |
+|-----------|---------------------|
+| `whoami` | Menampilkan nama user yang sedang aktif di sistem. |
+| `id` | Menunjukkan UID, GID, serta grup yang terhubung dengan user. |
+| `groups` | Menampilkan daftar grup tempat user tergabung. |
+| `adduser <nama_user>` | Membuat akun pengguna baru di sistem Linux. |
+| `passwd <nama_user>` | Mengatur atau mengganti password pengguna. |
+| `ps aux` | Menampilkan semua proses yang sedang berjalan di sistem beserta detailnya. |
+| `top` | Memantau proses dan penggunaan sumber daya sistem secara langsung. |
+| `sleep 1000 &` | Menjalankan proses “sleep” di latar belakang selama 1000 detik. |
+| `ps aux | grep sleep` | Menyaring daftar proses untuk menampilkan yang berhubungan dengan “sleep”. |
+| `kill <PID>` | Mengakhiri proses berdasarkan nomor PID-nya. |
+| `pstree -p` | Menampilkan struktur hierarki proses beserta nomor PID masing-masing. |
+
+
+systemd(1)-+-agetty(224)
+           |-agetty(232)
+           |-cron(186)
+           |-dbus-daemon(188)
+           |-init-systemd(Ub(2)-+-SessionLeader(305)---Relay(307)(306)---bash(307)-+-head(533)
+           |                    |                                                  `-pstree(532)
+           |                    |-init(7)---{init}(8)
+           |                    |-login(308)---bash(370)
+           |                    `-{init-systemd(Ub}(9)
+           |-networkd-dispat(193)
+           |-rsyslogd(194)-+-{rsyslogd}(200)
+           |               |-{rsyslogd}(201)
+           |               `-{rsyslogd}(202)
+           |-systemd(354)---(sd-pam)(355)
+           |-systemd-journal(64)
+           |-systemd-logind(197)
+           |-systemd-resolve(127)
+           |-systemd-timesyn(131)---{systemd-timesyn}(149)
+           |-systemd-udevd(92)-+-systemd-udevd(530)
+           |                   `-systemd-udevd(531)
+
+---          
+Hubungan antara User Management dan Keamanan Sistem Linux
+
+Manajemen user memiliki hubungan erat dengan keamanan sistem Linux karena pengaturan user, group, dan permission berfungsi untuk membatasi hak akses setiap pengguna. Dengan sistem ini, hanya user tertentu yang dapat menjalankan perintah atau mengubah file penting, sehingga mencegah tindakan yang tidak sah. Pengelolaan user yang baik juga membantu melindungi sistem dari penyalahgunaan, menjaga integritas data, dan memastikan hanya pengguna berwenang yang dapat mengatur konfigurasi sistem.
+
 
 ## Quiz
 1. [Pertanyaan 1]  
