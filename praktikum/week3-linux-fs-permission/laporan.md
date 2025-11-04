@@ -76,8 +76,10 @@ ls -l percobaan.txt
 
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshot](screenshots/Hasil%20Eksekusi.png)
+
+
+
 
 ---
 
@@ -154,7 +156,15 @@ Berisi daftar seluruh akun pengguna yang ada di sistem Linux, baik user biasa ma
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+1. Sistem Linux memiliki mekanisme pengelolaan file yang terstruktur dan aman melalui konsep permission dan ownership, yang memastikan setiap file hanya dapat diakses oleh pengguna yang berhak.
+   
+2. Dari hasil percobaan dengan perintah ``pwd``, ``ls``, dan ``cd``, dapat disimpulkan bahwa pengguna dapat dengan mudah menavigasi sistem file Linux untuk memahami letak serta isi direktori.
+
+3. Melalui percobaan ``chmod dan chown``, terbukti bahwa Linux memberikan fleksibilitas dalam mengatur hak akses dan kepemilikan file, yang penting untuk menjaga keamanan data serta kontrol administratif dalam sistem.
+
+4. Perintah seperti ``cat /etc/passwd`` memperlihatkan bahwa Linux menyimpan informasi pengguna secara transparan namun tetap aman, dengan sistem identifikasi berbasis UID dan GID.
+
 
 ---
 
