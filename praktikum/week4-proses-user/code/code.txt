@@ -1,0 +1,112 @@
+This message is shown once a day. To disable it please create the
+/home/aelyea/.hushlogin file.
+aelyea@saturnkissess:~$
+aelyea@saturnkissess:~$ whoami
+aelyea
+aelyea@saturnkissess:~$ id
+uid=1000(aelyea) gid=1000(aelyea) groups=1000(aelyea),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),117(netdev)
+aelyea@saturnkissess:~$ groups
+aelyea adm dialout cdrom floppy sudo audio dip video plugdev netdev
+aelyea@saturnkissess:~$ sudo adduser praktikan
+[sudo] password for aelyea:
+adduser: The user `praktikan' already exists.
+aelyea@saturnkissess:~$ sudo passwd praktikan
+New password:
+Retype new password:
+passwd: password updated successfully
+aelyea@saturnkissess:~$ ps aux | head -10
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  1.0  0.2 165820 10444 ?        Ss   19:05   0:01 /sbin/init
+root           2  0.0  0.0   3072  1664 ?        Sl   19:05   0:00 /init
+root           7  0.0  0.0   3088  1792 ?        Sl   19:05   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          64  0.3  0.3  39620 13952 ?        S<s  19:05   0:00 /lib/systemd/systemd-journald
+root          92  0.4  0.1  22840  5504 ?        Ss   19:05   0:00 /lib/systemd/systemd-udevd
+systemd+     127  0.3  0.3  25672 12916 ?        Ss   19:05   0:00 /lib/systemd/systemd-resolved
+systemd+     131  0.2  0.1  89364  7040 ?        Ssl  19:05   0:00 /lib/systemd/systemd-timesyncd
+root         186  0.0  0.0   4308  2560 ?        Ss   19:05   0:00 /usr/sbin/cron -f -P
+message+     188  0.0  0.1   8584  4352 ?        Ss   19:05   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+aelyea@saturnkissess:~$ top -n 1
+top - 19:07:24 up 1 min,  1 user,  load average: 0.11, 0.09, 0.03
+Tasks:  25 total,   1 running,  24 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3854.2 total,   3171.8 free,    315.3 used,    367.1 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   3405.0 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  165820  10444   7884 S   0.0   0.3   0:01.05 systemd
+      2 root      20   0    3072   1664   1664 S   0.0   0.0   0:00.01 init-systemd(Ub
+      7 root      20   0    3088   1792   1792 S   0.0   0.0   0:00.00 init
+     64 root      19  -1   39620  13952  13184 S   0.0   0.4   0:00.29 systemd-journal
+     92 root      20   0   22840   5504   4608 S   0.0   0.1   0:00.42 systemd-udevd
+    127 systemd+  20   0   25672  12916   8832 S   0.0   0.3   0:00.33 systemd-resolve
+    131 systemd+  20   0   89364   7040   6272 S   0.0   0.2   0:00.23 systemd-timesyn
+    186 root      20   0    4308   2560   2432 S   0.0   0.1   0:00.00 cron
+    188 message+  20   0    8584   4352   3968 S   0.0   0.1   0:00.09 dbus-daemon
+    193 root      20   0   30136  18304   9984 S   0.0   0.5   0:00.33 networkd-dispat
+    194 syslog    20   0  222404   5120   4224 S   0.0   0.1   0:00.05 rsyslogd
+    197 root      20   0   15328   7296   6528 S   0.0   0.2   0:00.22 systemd-logind
+    224 root      20   0    3240   2176   2048 S   0.0   0.1   0:00.00 agetty
+    231 root      20   0  107156  21248  13312 S   0.0   0.5   0:00.21 unattended-upgr
+    232 root      20   0    3196   2176   2048 S   0.0   0.1   0:00.00 agetty
+    305 root      20   0    3080    896    896 S   0.0   0.0   0:00.00 SessionLeader
+    306 root      20   0    3096   1152   1024 S   0.0   0.0   0:00.03 Relay(307)
+    307 aelyea    20   0    6124   4992   3328 S   0.0   0.1   0:00.04 bash
+    308 root      20   0    7524   4736   3968 S   0.0   0.1   0:00.01 login
+    354 aelyea    20   0   17040   9216   7808 S   0.0   0.2   0:00.08 systemd
+    355 aelyea    20   0  103336   4988   1536 S   0.0   0.1   0:00.00 (sd-pam)
+    370 aelyea    20   0    6100   4864   3328 S   0.0   0.1   0:00.02 bash
+    478 root      20   0   22840   3000   1792 S   0.0   0.1   0:00.00 systemd-udevd
+    479 root      20   0   22840   3000   1792 S   0.0   0.1   0:00.00 systemd-udevd
+    480 aelyea    20   0    7816   3712   3072 R   0.0   0.1   0:00.00 top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aelyea@saturnkissess:~$ sleep 1000 &
+[1] 495
+aelyea@saturnkissess:~$ ps aux | grep sleep
+aelyea       495  0.0  0.0   3212  1792 pts/0    S    19:07   0:00 sleep 1000
+aelyea       501  0.0  0.0   4028  2176 pts/0    S+   19:08   0:00 grep --color=auto sleep
+
+aelyea@saturnkissess:~$ kill 495
+aelyea@saturnkissess:~$ ps aux | grep sleep
+aelyea       521  0.0  0.0   4028  2176 pts/0    S+   19:09   0:00 grep --color=auto sleep
+[1]+  Terminated              sleep 1000
+aelyea@saturnkissess:~$ pstree -p | head -20
+systemd(1)-+-agetty(224)
+           |-agetty(232)
+           |-cron(186)
+           |-dbus-daemon(188)
+           |-init-systemd(Ub(2)-+-SessionLeader(305)---Relay(307)(306)---bash(307)-+-head(533)
+           |                    |                                                  `-pstree(532)
+           |                    |-init(7)---{init}(8)
+           |                    |-login(308)---bash(370)
+           |                    `-{init-systemd(Ub}(9)
+           |-networkd-dispat(193)
+           |-rsyslogd(194)-+-{rsyslogd}(200)
+           |               |-{rsyslogd}(201)
+           |               `-{rsyslogd}(202)
+           |-systemd(354)---(sd-pam)(355)
+           |-systemd-journal(64)
+           |-systemd-logind(197)
+           |-systemd-resolve(127)
+           |-systemd-timesyn(131)---{systemd-timesyn}(149)
+           |-systemd-udevd(92)-+-systemd-udevd(530)
+           |                   `-systemd-udevd(531)
+aelyea@saturnkissess:~$
