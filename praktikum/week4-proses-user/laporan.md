@@ -181,7 +181,7 @@ Proses induk yang terdeteksi adalah **systemd (PID 1)**.
 | `kill <PID>` | Mengakhiri proses berdasarkan nomor PID-nya. |
 | `pstree -p` | Menampilkan struktur hierarki proses beserta nomor PID masing-masing. |
 
-
+```
 systemd(1)-+-agetty(224)
            |-agetty(232)
            |-cron(186)
@@ -202,6 +202,8 @@ systemd(1)-+-agetty(224)
            |-systemd-timesyn(131)---{systemd-timesyn}(149)
            |-systemd-udevd(92)-+-systemd-udevd(530)
            |                   `-systemd-udevd(531)
+```
+
 
 ---          
 Hubungan antara User Management dan Keamanan Sistem Linux
@@ -210,20 +212,28 @@ Manajemen user memiliki hubungan erat dengan keamanan sistem Linux karena pengat
 
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Apa fungsi dari proses `init` atau `systemd` dalam sistem Linux?
+   
+   **Jawaban:**
+   Fungsi ``init`` atau ``systemd`` dalam sistem Linux adalah untuk memulai dan mengatur seluruh proses ketika sistem dinyalakan. Proses ini bertugas menjalankan layanan penting, mengelola proses lain, serta menjaga agar sistem berjalan dengan stabil dan teratur. Dengan demikian, ``systemd`` berperan sebagai pengendali utama yang memastikan semua komponen sistem Linux berfungsi dengan baik sejak proses booting hingga sistem dimatikan.
 
+
+2. Apa perbedaan antara kill dan killall?
+   
+   **Jawaban:**
+   Perintah ``kill`` digunakan untuk menghentikan proses berdasarkan nomor PID (Process ID), sedangkan ``killall`` digunakan untuk menghentikan semua proses yang memiliki nama program yang sama.
+   
+4. Mengapa user root memiliki hak istimewa di sistem Linux?  
+   **Jawaban:**  
+Karena ia dirancang sebagai superuser yang dapat mengakses, mengubah, dan mengontrol semua aspek sistem tanpa batasan, seperti file sistem, proses, dan perangkat keras. Hak ini diperlukan untuk tugas administrasi penting, seperti instalasi perangkat lunak, konfigurasi jaringan, dan pemeliharaan keamanan, yang tidak bisa dilakukan oleh user biasa. Namun, penggunaan root berisiko tinggi karena kesalahan dapat merusak sistem secara permanen, sehingga biasanya dihindari untuk tugas sehari-hari.
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
+- Apa bagian yang paling menantang minggu ini?
+   Belajar tentang sistem Linux dan hak istimewa user root terasa sulit karena banyak istilah teknis yang baru, dan saya sering bingung membedakan antara user biasa dan root.
 - Bagaimana cara Anda mengatasinya?  
-
+  Mengatasi dengan cara memahami konsepnya secara bertahap.
 ---
 
 **Credit:**  
