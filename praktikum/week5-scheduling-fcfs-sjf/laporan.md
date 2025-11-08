@@ -88,7 +88,17 @@ dmesg | head
 ---
 
 ## Analisis
-Eks
+
+Eksperimen 1 - FCFS (First Come First Served)
+![Screenshot hasil FCFS](screenshots/FCFS.png)
+
+
+Eksperimen 2 - SJF (Shortest Job First)
+
+![Screenshot hasil SJF](screenshots/SJF.png)
+
+
+
 
 ---
 
