@@ -89,14 +89,44 @@ dmesg | head
 
 ## Analisis
 
-Eksperimen 1 - FCFS (First Come First Served)
+**Eksperimen 1 - FCFS (First Come First Served)**
 ![Screenshot hasil FCFS](screenshots/FCFS.png)
 
 
-Eksperimen 2 - SJF (Shortest Job First)
+**Eksperimen 2 - SJF (Shortest Job First)**
 
 ![Screenshot hasil SJF](screenshots/SJF.png)
 
+
+**Gantt Chart.**
+![Screenshot hasil SJF](screenshots/gantt%20chart.png)
+
+**Perbandingan Hasil FCFS & SJF**
+
+| Algoritma | Rata-rata Waiting Time (WT) | Rata-rata Turnaround Time (TAT) | Kelebihan | Kekurangan |
+|------------|-----------------------------|----------------------------------|------------|-------------|
+| **FCFS (First Come First Served)** | 8,75 | 14,75 | Sederhana dan adil (berdasarkan urutan kedatangan) | Tidak efisien jika ada proses dengan burst time panjang (*convoy effect*) |
+| **SJF (Shortest Job First)** | 6,25 | 12,25 | Waktu tunggu dan waktu eksekusi rata-rata lebih rendah | Proses panjang bisa *starvation* (tidak mendapat giliran lama) |
+
+**Kondisi Keunggulan FCFS dan SJF**
+
+Keunggulan FCFS ketika:
+
+1. Proses memiliki waktu eksekusi yang bervariasi.
+
+2. Tujuan utama sistem adalah efisiensi dan mempercepat waktu tunggu rata-rata.
+
+3. Semua burst time sudah diketahui di awal (non-preemptive).
+
+ Keunggulan SJF ketika:
+
+1. Waktu eksekusi tiap proses hampir sama.
+
+2. Sistem menekankan keadilan (proses dilayani sesuai urutan datang).
+
+3. Lingkungan sederhana dan tidak membutuhkan estimasi waktu proses.
+
+---
 
 
 
@@ -108,19 +138,37 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Apa perbedaan utama antara FCFS dan SJF?
+   
+   **Jawaban:**
 
+   FCFS sederhana dan adil berdasarkan waktu kedatangan, sedangkan SJF fokus pada efisiensi waktu eksekusi untuk meminimalkan waktu tunggu.
+   
+2. Mengapa SJF dapat menghasilkan rata-rata waktu tunggu minimum?
+   
+   **Jawaban:**
+   
+   Karena SJF memilih proses dengan waktu eksekusi terpendek terlebih dahulu. Hal ini memungkinkan proses pendek selesai lebih cepat, sehingga proses lain yang menunggu dapat dimulai lebih awal, mengurangi total waktu tunggu keseluruhan, mirip dengan pengurutan berdasarkan durasi yang meminimalkan penundaan kumulatif dibandingkan FCFS yang tidak mempertimbangkan durasi.
+   
+3. Apa kelemahan SJF jika diterapkan pada sistem interaktif?
+   
+   **Jawaban:**
+   
+ - Dapat menyebabkan starvation (kelaparan) untuk proses dengan waktu eksekusi panjang, karena proses pendek selalu diprioritaskan.
+ -  Sulit memprediksi waktu eksekusi proses secara akurat, yang dapat mengganggu interaktivitas jika proses baru yang lebih pendek terus tiba.
+ - Untuk non-preemptive SJF, juga kurang cocok untuk sistem interaktif karena tidak dapat menginterupsi proses yang sedang berjalan, sehingga respons terhadap input pengguna bisa tertunda.
+ 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
+- Apa bagian yang paling menantang minggu ini?
+  
+  Masih sulit memahami dan mempelajari materi minggu ini
+  
 - Bagaimana cara Anda mengatasinya?  
+
+ Mencari penjelasan tambahan dari sumber online dan membaca ulang materi
 
 ---
 
