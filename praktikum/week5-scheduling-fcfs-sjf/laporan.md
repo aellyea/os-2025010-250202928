@@ -133,7 +133,9 @@ Keunggulan FCFS ketika:
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+SJF terbukti lebih optimal dalam menekan rata-rata waktu tunggu dan penyelesaian, karena menempatkan proses singkat di awal eksekusi, sehingga total waktu eksekusi keseluruhan menjadi lebih efisien.
+
+Jadi, algoritma penjadwalan menyesuaikan karakteristik beban kerjanya seperti FCFS cocok untuk sistem sederhana dengan beban merata, sedangkan SJF lebih sesuai untuk lingkungan yang mengutamakan performa dan efisiensi waktu eksekusi.
 
 ---
 
