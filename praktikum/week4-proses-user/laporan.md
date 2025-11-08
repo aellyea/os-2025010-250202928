@@ -114,8 +114,12 @@ git push origin main
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Hasil sleep](screenshots/sleep.png)
+
+![Hasil top](screenshots/top.png)
+
+![Hasil whoami](screenshots/whoami.png)
+
 
 ---
 
