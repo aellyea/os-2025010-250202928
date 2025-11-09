@@ -75,14 +75,33 @@ digunakan untuk membandingkan efisiensi algoritma penjadwalan.
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
-```bash
-uname -a
-lsmod | head
-dmesg | head
-```
 
----
+ **Eksperimen 1 – FCFS (First Come First Served)**
+ - Mengurutkan proses berdasarkan *Arrival Time* dan menghitung nilai untuk tiap proses
+     ```
+     Waiting Time (WT) = waktu mulai eksekusi - Arrival Time
+     Turnaround Time (TAT) = WT + Burst Time
+     ```
+   - Hitung rata-rata Waiting Time dan Turnaround Time.  
+   - Buat Gantt Chart sederhana:  
+     ```
+     | P1 | P2 | P3 | P4 |
+     0    6    14   21   24
+     ```
+
+ **Eksperimen 2 – SJF (Shortest Job First)**
+   - Mengurutkan proses berdasarkan *Burst Time* terpendek (dengan memperhatikan waktu kedatangan).  
+   - Melakukan perhitungan WT dan TAT seperti langkah sebelumnya.  
+   - Membandingkan hasil FCFS dan SJF dengan tabel berikut:
+
+     | Algoritma | Avg Waiting Time | Avg Turnaround Time | Kelebihan | Kekurangan |
+     |------------|------------------|----------------------|------------|-------------|
+     | FCFS | ... | ... | Sederhana dan mudah diterapkan | Tidak efisien untuk proses panjang |
+     | SJF | ... | ... | Optimal untuk job pendek | Menyebabkan *starvation* pada job panjang |
+
+ **Eksperimen 3 – Visualisasi Spreadsheet**
+   - Menggunakan Excel/Google Sheets untuk membuat perhitungan otomatis
+
 
 
 ---
@@ -99,6 +118,7 @@ dmesg | head
 
 
 **Gantt Chart.**
+
 ![Screenshot hasil SJF](screenshots/gantt%20chart.png)
 
 **Perbandingan Hasil FCFS & SJF**
@@ -126,7 +146,6 @@ Keunggulan FCFS ketika:
 
 3. Lingkungan sederhana dan tidak membutuhkan estimasi waktu proses.
 
----
 
 
 
