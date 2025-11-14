@@ -154,7 +154,6 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Refleksi Diri
-Tuliskan secara singkat:
 
 Apa bagian yang paling menantang minggu ini?
 
