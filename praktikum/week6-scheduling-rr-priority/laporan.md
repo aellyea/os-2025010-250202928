@@ -102,19 +102,80 @@ Burst time menggambarkan berapa lama sebuah proses membutuhkan waktu CPU secara 
 
 ---
 
-## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
 
----
 
 ## Analisis
 
 **1. Eksperimen 1 - Round Robin (RR)**
 
+![Screenshot hasil RR](screenshots/round%20robin.png)
 
 
+ **Eksperimen 2 – Priority Scheduling (Non-Preemptive)**
+
+ ![Screenshot hasil Priority Scheduling](screenshots/priority%20scheduling.png)
+
+**Perbandingan Algoritma Penjadwalan CPU**
+
+| Algoritma | Avg Waiting Time | Avg Turnaround Time | Kelebihan | Kekurangan |
+|-----------|------------------:|----------------------:|-----------|------------|
+| RR (q = 2) | 9.75 | 15.25 | Adil & responsif | Banyak context switching |
+| RR (q = 3) | 8.50 | 14.00 | Seimbang antara fairness & efisiensi | Masih sensitif ke pemilihan quantum |
+| RR (q = 5) | 7.00 | 12.50 | Lebih efisien, mirip FCFS | Fairness menurun untuk proses kecil |
+| Priority (Non-Preemptive) | 5.25 | 10.75 | Sangat efisien untuk proses penting | Risiko **starvation** untuk prioritas rendah |
+
+**Eksperimen 3 – Analisis Variasi Time Quantum (Opsional)**
+
+## Quantum q = 2
+
+### Gantt Chart
+| P1 | P2 | P3 | P1 | P4 | P2 | P3 | P1 | P4 | P3 | P4 | P3 |
+
+- **P1**: 0–2, 6–8, 13–14 → finish = 14  
+- **P2**: 2–4, 10–11 → finish = 11  
+- **P3**: 4–6, 11–13, 16–18, 20–22 → finish = 22  
+- **P4**: 8–10, 14–16, 18–20 → finish = 20  
+
+| Proses | Finish | Arrival Time | Burst Time | Turnaround Time (TAT) | Waiting Time (WT) |
+|:------:|:------:|:-------------:|:-----------:|:-----------------------:|:------------------:|
+| P1 | 14 | 0 | 5 | 14 | 9 |
+| P2 | 11 | 1 | 3 | 10 | 7 |
+| P3 | 22 | 2 | 8 | 20 | 12 |
+| P4 | 20 | 3 | 6 | 17 | 11 |
+
+- **Total WT** = 39  
+- **Rata-rata WT** = 9.75  
+- **Total TAT** = 61  
+- **Rata-rata TAT** = 15.25
+
+## Quantum q = 5
+
+### Gantt Chart
+| P1 | P2 | P3 | P4 | P3 | P4 |
+
+- **P1**: 0–5 → finish = 5  
+- **P2**: 5–8 → finish = 8  
+- **P3**: 8–13, 18–21 → finish = 21  
+- **P4**: 13–18, 21–22 → finish = 22  
+
+### Hasil Akhir per Proses
+| Proses | Finish | Arrival Time | Burst Time | Turnaround Time (TAT) | Waiting Time (WT) |
+|:------:|:------:|:-------------:|:-----------:|:-----------------------:|:------------------:|
+| P1 | 5  | 0 | 5 | 5  | 0  |
+| P2 | 8  | 1 | 3 | 7  | 4  |
+| P3 | 21 | 2 | 8 | 19 | 11 |
+| P4 | 22 | 3 | 6 | 19 | 13 |
+
+- **Total WT** = 28  
+- **Rata-rata WT** = 7.00  
+- **Total TAT** = 50  
+- **Rata-rata TAT** = 12.50
      
+| Quantum | Avg WT | Avg TAT | Pengaruh |
+|:-------:|:------:|:--------:|-----------|
+| 2 | 9.75 | 15.25 | Lebih adil, tapi overhead tinggi (context switch sering) |
+| 3 | 8.50 | 14.00 | Keseimbangan antara keadilan dan efisiensi |
+| 5 | 7.00 | 12.50 | Lebih efisien untuk proses panjang, tapi kurang adil |
 
 ---
 
