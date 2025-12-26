@@ -12,32 +12,69 @@ Topik: Simulasi Algoritma Penjadwalan CPU
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+
+1. Menyiapkan dataset proses sebagai masukan simulasi.  
+2. Mengembangkan aplikasi scheduling CPU berbasis command line.  
+3. Menerapkan algoritma FCFS dan/atau SJF tanpa preemption.  
+4. Mengeksekusi program dengan data tes.  
+5. Mendokumentasikan dan menyimpan output hasil program.
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+
+*Pengelolaan Eksekusi Proses dalam Sistem Operasi*
+
+Memiliki peran penting dalam mengatur eksekusi berbagai proses yang berjalan secara bersamaan. Pengelolaan ini bertujuan agar penggunaan CPU dapat dilakukan secara efektif dengan membagi waktu pemrosesan kepada setiap proses yang berada dalam kondisi siap. Tanpa mekanisme pengaturan yang baik, proses dapat saling berebut sumber daya sehingga menurunkan kinerja sistem secara keseluruhan.
+
+*Algoritma Penjadwalan CPU*
+
+Algoritma penjadwalan CPU digunakan sebagai aturan untuk menentukan urutan proses yang akan dieksekusi oleh prosesor. Setiap algoritma memiliki pendekatan dan karakteristik yang berbeda dalam menentukan prioritas eksekusi proses. Pemilihan algoritma penjadwalan yang tepat dapat memengaruhi kinerja sistem, khususnya dalam hal waktu tunggu dan waktu penyelesaian proses.
+
+*Simulasi Algoritma Penjadwalan*
+
+Simulasi algoritma penjadwalan CPU merupakan metode untuk memodelkan cara kerja penjadwalan secara sederhana melalui program komputer. Dengan menggunakan simulasi, proses perhitungan waktu eksekusi dapat dilakukan secara otomatis dan hasilnya dapat dianalisis serta dibandingkan dengan perhitungan manual. Simulasi ini membantu dalam memahami perilaku algoritma penjadwalan secara lebih praktis dan terstruktur.
 
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+
+1. Memahami prinsip scheduling CPU lewat pembuatan kode program.  
+2. Membuat program simulasi untuk penjadwalan proses.  
+3. Melakukan uji coba algoritma FCFS maupun SJF dengan dataset proses.  
+4. Menghitung otomatis waktu tunggu dan waktu penyelesaian proses.  
+5. Menampilkan output simulasi dalam format tabel dengan baik.
 
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
-```bash
-uname -a
-lsmod | head
-dmesg | head
-```
+
+1. **Menyiapkan Dataset**
+
+   | Proses | Arrival Time | Burst Time |
+   |:--:|:--:|:--:|
+   | P1 | 0 | 6 |
+   | P2 | 1 | 8 |
+   | P3 | 2 | 7 |
+   | P4 | 3 | 3 |
+
+2. **Mengimplementasi Algoritma**
+
+   Dengan ketentuan
+   
+   1. Menghitung *waiting time* dan *turnaround time*.  
+   2. Mendukung minimal **1 algoritma (FCFS atau SJF non-preemptive)**.  
+   3. Menampilkan hasil dalam tabel.
+
+
+ 4. **Eksekusi & Validasi**
+
+    Menjalankan program menggunakan dataset uji.  
+  
+
+ 5. **Analisis**
+
+    Menjelaskan alur program dan membandingkan hasil simulasi dengan perhitungan manual serta menjelaskan kelebihan dan keterbatasan simulasi.
 
 ---
 
