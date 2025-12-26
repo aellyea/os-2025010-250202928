@@ -1,13 +1,13 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu 9
+Topik: Simulasi Algoritma Penjadwalan CPU
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Alya Deviana Putri Reynaldi 
+- **NIM**   : 250202928 
+- **Kelas** : 1IKRB
 
 ---
 
@@ -60,19 +60,44 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+
+1. Mengapa simulasi diperlukan untuk menguji algoritma scheduling?
+
+   **Jawaban:**
+
+   Karena simulasi memungkinkan evaluasi algoritma penjadwalan CPU pada skenario proses rumit yang menyerupai kondisi nyata, seperti variasi waktu kedatangan, durasi eksekusi, dan pola acak operasi sistem aktual dan dapat mengatasi masalah seperti kelaparan proses atau overhead memori cache.
+
+   
+2. Apa perbedaan hasil simulasi dengan perhitungan manual jika dataset besar?
+   
+   **Jawaban:**
+   
+   Simulasi jauh lebih praktis karena otomatis menangani kerumitan durasi proses, sedangkan manual memerlukan waktu panjang dan sulit diverifikasi untuk optimasi. Untuk data skala besar, hitungan tangan rawan kesalahan karena faktor manusia dan terhambat pada sampel terbatas, menyebabkan selisih besar dengan simulasi yang mengolah semua data secara menyeluruh.
+
+   
+3. Algoritma mana yang lebih mudah diimplementasikan? Jelaskan.
+ 
+   **Jawaban:**
+
+   Algoritma FCFS (First-Come-First-Served) paling sederhana untuk diimplementasikan karena hanya memproses proses berdasarkan urutan kedatangan menggunakan struktur antrian FIFO standar, tanpa memerlukan logika tambahan seperti pemilihan burst time terkecil atau pengelolaan prioritas. Berbeda dengan SJF yang harus mencari proses terpendek, Priority yang membandingkan nilai prioritas secara dinamis, atau Round Robin yang melibatkan pembagian time quantum, FCFS memerlukan kode minimal dan cocok untuk lingkungan batch processing sederhana.
+
+   
 
 ---
 
 ## Refleksi Diri
-Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+1. Apa bagian yang paling menantang minggu ini?
+
+   **Jawaban:**
+   
+   Memahami perbedaan simulasi dengan manual calculation untuk dataset besar pada algoritma scheduling karena manual mudah error.
+  
+2. Bagaimana cara Anda mengatasinya?  
+
+   **Jawaban:**
+   
+   Belajar dari simulasi kode Python sederhana dan membandingkan hasil.
+
 
 ---
 
