@@ -79,9 +79,7 @@ Simulasi algoritma penjadwalan CPU merupakan metode untuk memodelkan cara kerja 
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
-
+![SJF](screenshots/sjf.png)
 ---
 
 ## Analisis
