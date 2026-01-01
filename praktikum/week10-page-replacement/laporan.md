@@ -12,32 +12,101 @@ Topik: Manajemen Memori – Page Replacement (FIFO & LRU)
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+1. Menguasai fondasi memori virtual beserta isu page fault dalam sistem operasi
+
+2. Merealisasikan simulasi algoritma FIFO dan LRU dengan bahasa pemrograman yang dipilih
+
+3. Mengevaluasi output simulasi untuk menghitung jumlah page fault yang muncul
+
+4. Membandingkan kinerja algoritma FIFO dan LRU sesuai hasil uji coba
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+1. Memori virtual memungkinkan eksekusi program lebih besar dari RAM fisik dengan membagi memori menjadi page yang dimuat dari storage sekunder ke memori utama saat dibutuhkan.
+
+2. Page fault muncul ketika page proses tidak ada di RAM, sehingga OS harus memuatnya dari disk dan menerapkan algoritma penggantian jika memori penuh.
+
+3. Algoritma FIFO (First-In First-Out) mengganti page tertua yang pertama masuk ke memori menggunakan struktur queue, meski sederhana tapi mengabaikan pola akses halaman.
+
+4. Algoritma LRU (Least Recently Used) menyingkirkan page paling lama tak dipakai dengan asumsi pola akses masa lalu, menghasilkan page fault lebih rendah tapi implementasinya lebih rumit daripada FIFO.
+
+5. Page hit terjadi jika page sudah ada di memori, sedangkan page fault memerlukan pemuatan dari disk, dan efektivitas algoritma diukur dari jumlah page fault minimal.
+
 
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1. Memilih bahasa pemrograman Python
+2. Menyiapkan reference string dan frame memori
+3. Membuat simulasi page replacement FIFO
+4. Mengimplementasikan logika antrian FIFO
+5. Menghitung page fault untuk algoritma FIFO
+6. Membuat simulasi page replacement LRU
+7. Mengimplementasikan pelacakan penggunaan LRU
+8. Menghitung page fault untuk algoritma LRU
+9. Menjalankan dan membandingkan kedua simulasi
+10. Menganalisis hasil serta menyusun laporan
+
 
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
-```bash
-uname -a
-lsmod | head
-dmesg | head
+
+- Bahasa pemrograman **bebas** (Python / C / Java / lainnya).
+- Program berbasis **terminal** (tidak wajib GUI).
+
+
+ ```
+praktikum/week10-page-replacement/
+├─ code/
+│  ├─ page_replacement.*
+│  └─ reference_string.txt
+├─ screenshots/
+│  └─ hasil_simulasi.png
+└─ laporan.md
 ```
+
+
+---
+
+
+1. **Menyiapkan Dataset**
+
+   Gunakan *reference string* berikut sebagai contoh:
+   ```
+   7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2
+   ```
+   Jumlah frame memori: **3 frame**.
+
+2. **Implementasi FIFO**
+
+   - Simulasikan penggantian halaman menggunakan algoritma FIFO.
+   - Catat setiap *page hit* dan *page fault*.
+   - Hitung total *page fault*.
+
+3. **Implementasi LRU**
+
+   - Simulasikan penggantian halaman menggunakan algoritma LRU.
+   - Catat setiap *page hit* dan *page fault*.
+   - Hitung total *page fault*.
+
+4. **Eksekusi & Validasi**
+
+   - Jalankan program untuk FIFO dan LRU.
+   - Pastikan hasil simulasi logis dan konsisten.
+   - Simpan screenshot hasil eksekusi.
+
+5. **Analisis Perbandingan**
+
+   Buat tabel perbandingan seperti berikut:
+
+   | Algoritma | Jumlah Page Fault | Keterangan |
+   |:--|:--:|:--|
+   | FIFO | ... | ... |
+   | LRU | ... | ... |
+
+
 
 ---
 
@@ -48,9 +117,17 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+
+Referensi String dengan frame memori 3
+
+7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2
+
+
+1. FIFO
+
+2. LRU
+
+3. TOTAL PAGE FAULT
 
 ---
 
