@@ -124,15 +124,46 @@ Referensi String dengan frame memori 3
 
 
 1. FIFO
+   
+![FIFO](screenshots/FIFO.png)
 
 2. LRU
+   
+![LRU](screenshots/LRU.png)
 
 3. TOTAL PAGE FAULT
+   
+![Result](screenshots/Result.png)
+
+
+ANALISIS PERBANDINGAN 
+
+| Algoritma | Jumlah Page Fault | Deskripsi                                                                                        |
+| --------- | ------------------------ | ------------------------------------------------------------------------------------------------ |
+| FIFO      | 10                       | Melakukan penggantian halaman berdasarkan susunan kedatangan awal, mengabaikan tingkat pemakaian |
+| LRU       | 9                        | Melakukan penggantian halaman yang paling lama tidak dipakai                                     |
+
+Penjelasan Perbedaan.
+
+Perbedaan jumlah page fault muncul karena algoritma FIFO hanya melihat urutan masuk halaman ke memori. Akibatnya, halaman yang masih sering digunakan bisa terganti meski masih dibutuhkan.
+
+Sebaliknya, algoritma LRU memperhatikan sejarah pemakaian halaman. Halaman yang jarang dipakai atau lama tak digunakan akan diganti duluan, sehingga mengurangi kemungkinan page fault.
+
+
+Keefisienan.
+
+Berdasarkan hasil simulasi, algoritma LRU lebih unggul daripada FIFO sebab menimbulkan jumlah kesalahan halaman yang lebih rendah. Dengan memanfaatkan data penggunaan terakhir halaman, LRU dapat menjaga halaman yang masih diperlukan tetap berada di memori, sehingga performa sistem semakin baik.
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+1. Simulasi algoritma penggantian halaman FIFO dan LRU telah dilaksanakan sukses dengan reference string dan 3 frame memori, serta berhasil merekam setiap page hit serta page fault lewat tampilan terminal.
+
+2. Hasil simulasi mengindikasikan algoritma FIFO mencatat 10 page fault, sementara LRU hanya 9 page fault, yang membuktikan perbedaan tingkat keefektifan keduanya.
+
+3. Berdasarkan analisis perbandingan, algoritma LRU lebih optimal ketimbang FIFO karena memperhitungkan sejarah pemakaian halaman, sehingga menurunkan jumlah page fault dan menyempurnakan performa pengelolaan memori.
+
 
 ---
 
