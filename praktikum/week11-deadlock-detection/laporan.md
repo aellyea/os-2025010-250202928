@@ -60,7 +60,7 @@ Jika deadlock terdeteksi, sistem operasi dapat melakukan pemulihan melalui berba
 
 ## Kode / Perintah
 
-Ketentuan Teknis
+**Ketentuan Teknis**
 
 Bahasa pemrograman bebas (Python / C / Java / lainnya).
 Program berbasis terminal, tidak memerlukan GUI.
@@ -71,25 +71,32 @@ Gunakan dataset sederhana yang berisi:
 Daftar proses
 Resource Allocation
 Resource Request / Need
+
 Contoh tabel:
 
 Proses	Allocation	Request
+
 P1	R1	R2
 P2	R2	R3
 P3	R3	R1
-Implementasi Algoritma Deteksi Deadlock
+
+**Implementasi Algoritma Deteksi Deadlock**
 
 Program minimal harus:
 
 Membaca data proses dan resource.
+
 Menentukan apakah sistem berada dalam kondisi deadlock.
+
 Menampilkan proses mana saja yang terlibat deadlock.
-Eksekusi & Validasi
+
+**Eksekusi & Validasi**
 
 Jalankan program dengan dataset uji.
 Validasi hasil deteksi dengan analisis manual/logis.
 Simpan hasil eksekusi dalam bentuk screenshot.
-Analisis Hasil
+
+**Analisis Hasil**
 
 Sajikan hasil deteksi dalam tabel (proses deadlock / tidak).
 
@@ -97,7 +104,7 @@ Jelaskan mengapa deadlock terjadi atau tidak terjadi.
 
 Kaitkan hasil dengan teori deadlock (empat kondisi).
 
-Commit & Push
+**Commit & Push**
 
 git add .
 git commit -m "Minggu 11 - Deadlock Detection"
@@ -106,20 +113,43 @@ git push origin main
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+
+Hasil Deteksi
+
+![Hasil Deteksi Deadlock](screenshots/hasil_deteksi.png)
+
 
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+
+Dari hasil pengujian menggunakan dataset, proses yang terlibat dalam deadlock adalah:
+
+| Proses | Status   |
+| ------ | -------- |
+| P1     | Deadlock |
+| P2     | Deadlock |
+| P3     | Deadlock |
+
+Deadlock terjadi karena setiap proses menahan satu resource dan menunggu resource lain yang sedang digunakan oleh proses lain. Kondisi ini menyebabkan tidak ada proses yang dapat melanjutkan eksekusi, sehingga sistem berada dalam keadaan deadlock.
+
+Hasil deteksi menunjukkan terjadinya deadlock karena sistem memenuhi keempat kondisi deadlock, yaitu mutual exclusion, hold and wait, no preemption, dan circular wait. Ketiga proses tersebut saling menunggu resource yang dipegang oleh proses lain, sehingga tidak ada proses yang dapat menyelesaikan eksekusinya.
+
+
+**Validasi Hasil Deteksi dengan Analisis Manual/Logis**
+
+Berdasarkan analisis manual terhadap dataset, setiap proses memegang satu resource dan menunggu resource lain yang sedang digunakan oleh proses lain. Kondisi ini membentuk **circular wait** (P1 → P2 → P3 → P1), sehingga tidak ada proses yang dapat melanjutkan eksekusi. Hasil analisis manual ini sesuai dengan hasil program yang mendeteksi adanya deadlock, sehingga hasil deteksi dinyatakan valid.
 
 ---
 
+
+
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+1. Program deteksi deadlock berhasil mengidentifikasi bahwa sistem berada dalam kondisi deadlock dan menentukan proses yang terlibat, yaitu P1, P2, dan P3, berdasarkan analisis hubungan antara proses dan resource.
+
+2. Deadlock terjadi karena keempat kondisi deadlock terpenuhi, yaitu mutual exclusion, hold and wait, no preemption, dan circular wait, sehingga tidak ada proses yang dapat melanjutkan eksekusi dan hasil deteksi dinyatakan valid secara logis.
+
 
 ---
 
