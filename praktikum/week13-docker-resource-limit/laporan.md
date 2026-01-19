@@ -91,24 +91,12 @@ docker run --rm resource-limit-test
 docker run --rm --cpus="0.5" --memory="256m" resource-limit-test
 ```
 
-5. Menjalankan Container untuk Monitoring
-  
-```bash
-docker run -d --name monitor-container resource-limit-test
-```
-
-6. Monitoring Penggunaan Resource
+5. Monitoring Penggunaan Resource
    
 ```bash
 docker stats
 ```
 
-7. Menghentikan dan Menghapus Container
-   
-```bash
-docker stop monitor-container
-docker rm monitor-container
-```
 
 
 
@@ -117,11 +105,44 @@ docker rm monitor-container
 ## Analisis dan Hasil Eksekusi
 
 
+## Percobaan Build Image Dock
+
+![Docker Build](screenshots/docker%20build.png)
+
+## Percobaan Menjalankan Container Tanpa Limit
+
+![Run Tanpa Limit](screenshots/run%20tanpa%20limit.png)
+
+## Percobaan Menjalankan Container Dengan Limit CPU
+
+![Run Dengan Limit CPU](screenshots/run%20dengan%20limit%20cpu.png)
+
+## Monitoring Penggunaan Resource
+
+![Docker Stats](screenshots/docker%20stats.png)
+
+
+| No | Percobaan | Perintah Docker | CPU Usage | Memory Usage | Batas Resource | Kondisi Container | Keterangan |
+|----|-------------------|-----------------|-----------|--------------|---------------|------------------|------------|
+| 1  | Build Image Docker | docker build -t week13-resource-limit ./code | - | - | - | Berhasil | Proses build image berjalan sukses tanpa error |
+| 2  | Run Container Tanpa Limit | docker run --name no-limit week13-resource-limit | Tinggi (±100%) | Rendah (±512 KiB) | Tidak ada | Berjalan normal | Container menggunakan CPU tanpa pembatasan |
+| 3  | Monitoring Tanpa Limit | docker stats | Tinggi | Rendah | Tidak ada | Aktif | CPU usage bebas mengikuti proses |
+| 4  | Run Container Limit CPU | docker run --cpus="0.5" --name cpu-limit week13-resource-limit | ±50% | Rendah (±512 KiB) | CPU 0.5 core | Berjalan normal | Penggunaan CPU dibatasi sesuai parameter |
+| 5  | Monitoring Limit CPU | docker stats | Stabil ±50% | Rendah | CPU 0.5 core | Aktif | CPU tidak melebihi batas |
+| 6  | Run Container Limit CPU & Memory | docker run --cpus="0.5" -m 256m --name cpu-mem-limit week13-resource-limit | ±50% | ≤256 MB | CPU & Memory | Berjalan normal | Memory tidak melebihi limit |
+| 7  | Monitoring CPU & Memory Limit | docker stats | Stabil | Stabil | CPU & Memory | Aktif | Resource sesuai konfigurasi |
+| 8  | Perbandingan Hasil | - | Lebih tinggi | Sama | Berbeda | - | Container tanpa limit lebih boros CPU |
+`
+
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+1. Container yang dijalankan tanpa resource limit dapat menggunakan CPU secara penuh, sehingga berpotensi membebani sistem host.
+2. Penerapan limit CPU dan memori pada container membuat penggunaan resource lebih terkontrol dan stabil tanpa menghentikan proses aplikasi.
+3. Docker resource limit membantu meningkatkan efisiensi dan mencegah satu container mendominasi resource sistem.
+
 
 ---
 
