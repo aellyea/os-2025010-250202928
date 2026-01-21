@@ -188,6 +188,7 @@ Proses dengan *finish[i] == False* dinyatakan deadlock.
 **Hasil**
 
 
+![Deadlock](screenshots/deadlock.png)
 
 
 **Ringkasan**
