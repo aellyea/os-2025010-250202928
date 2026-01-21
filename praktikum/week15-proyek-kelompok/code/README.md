@@ -46,4 +46,4 @@ Gunakan flag `-it` karena aplikasi membutuhkan input interaktif.
 ```bash
    docker run -it genshin-simulasi python Deadlock/main.py
    ```
-**Tips:** Jika Anda ingin menghentikan kontainer yang sedang berjalan (terutama saat simulasi Deadlock), tekan `Ctrl + C` pada keyboard Anda.
+**Tips:** Jika Anda ingin menghentikan kontainer yang sedang berjalan, tekan `Ctrl + C` pada keyboard Anda.
