@@ -4,8 +4,9 @@ Repositori ini berisi simulasi CPU Scheduling (FCFS), Page Replacement (FIFO), d
 
 ## Struktur Folder
 - `cpu_scheduling.py`: Simulasi FCFS (Masuk Game).
-- `FIFO/`: Folder berisi script `asset_name.py` dan data `1asset.csv`.
-- `Deadlock/`: Folder berisi script `main.py` (Simulasi Deadlock karakter).
+- `FIFO/`: File berisi data `1asset.csv`.
+- `Deadlock/`: File berisi script `main.py` (Simulasi Deadlock karakter).
+- `run_all`: File eksekutor utama yang menjalankan seluruh modul secara berurutan
 
 ---
 
@@ -18,32 +19,16 @@ Pastikan Python 3.x sudah terinstall.
    ```
 2. **FIFO Page Replacement:**
 ```bash
-   python FIFO/asset_name.py
+   python page_replacement.py
    ```
 3. **Deadlock Simulation:**
 ```bash
-   python Deadlock/main.py
+   python Deadlock.py
    ```
 
 ## Menjalankan via Docker
-1. **Build Image**
-Jalankan perintah ini di folder utama:
-```bash
-   docker build -t genshin-simulasi .
-   ```
-2. **Run Container (Pilih Modul)**
-Gunakan flag `-it` karena aplikasi membutuhkan input interaktif.
+Container akan menjalankan file `run_all.py` secara otomatis, yang mengeksekusi seluruh modul
 
-- **Menjalankan CPU Scheduling (Default):**
 ```bash
-   docker run -it genshin-simulasi
+docker run --rm week15-os
    ```
-- **Menjalankan FIFO RAM Monitoring:**
-```bash
-   docker run -it genshin-simulasi python FIFO/asset_name.py
-   ```
-- **Menjalankan Deadlock Simulation:**
-```bash
-   docker run -it genshin-simulasi python Deadlock/main.py
-   ```
-**Tips:** Jika Anda ingin menghentikan kontainer yang sedang berjalan, tekan `Ctrl + C` pada keyboard Anda.
