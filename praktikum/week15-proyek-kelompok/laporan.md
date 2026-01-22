@@ -50,6 +50,7 @@ Secara umum, arsitektur aplikasi terdiri dari:
 2. **Prosseing Modul**: simulasi algoritma sistem operasi
 3. **Output**: tabel ASCII dan ringkasan metrik hasil simulasi
 
+---
 
 **B. Modul dan Alur Data**
 
