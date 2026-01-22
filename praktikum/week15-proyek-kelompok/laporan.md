@@ -153,10 +153,14 @@ Modul ini mengilustrasikan konsep deadlock secara nyata, di mana dua proses sali
 Menjalankan docker dengan
 
 ```bash
-
-docker build -t week15-proyek-kelompok .
-docker run -it --rm week15-proyek-kelompok
+docker build -t os-week15 .
+docker run --rm week15-os
 ```
+
+**Docker Build**
+
+![Docker Build](screenshots/docker_build.jpeg)
+
 
 **Simulasi Demo 1 – CPU Scheduling (FCFS)**
 
@@ -203,6 +207,8 @@ Perebutan material ascension karakter
 
 **1. Simulasi CPU Scheduling – FCFS (First Come First Served)**
 
+![Hasil CPU Scheduling](screenshots/Hasil%20cpu%20scheduling.png)
+
 **Data uji**
 
 Simulasi ini menggambarkan proses masuk game Genshin Impact dengan beberapa tahapan proses berikut:
@@ -240,6 +246,8 @@ Hal ini menimbulkan efek convoy effect, di mana proses pendek ikut tertahan oleh
 
 **2. Simulasi Page Replacement – FIFO (Monitoring RAM HP)**
 
+![Hasil FIFO](screenshots/hasil%20FIFO.png)
+
 **Data uji** :
 
 **Sumber Data**: 1asset.csv
@@ -274,6 +282,8 @@ FIFO mengganti aset berdasarkan urutan masuk pertama ke memori. Aset Mondstadt t
 
 **3. Simulasi Deadlock – Perebutan Resource**
 
+![Hasil Deadlock](screenshots/Hasil_Deadlock.png)
+
 Simulasi menggambarkan dua karakter (Raiden Shogun dan Zhongli) yang saling memperebutkan dua resource:
 
      Resource A: Nagadus Emerald
@@ -306,11 +316,12 @@ Akibatnya, kedua thread tidak dapat melanjutkan eksekusi dan program berhenti ta
 
 | No | Nama Anggota                | Peran                     | Tanggung Jawab Utama                                                                                                                                                                                                                     |
 | -- | --------------------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1  | Alya Deviana Putri Reynaldi | Project Lead / Integrator | Mengkoordinasikan kerja tim, mengatur pembagian tugas, mengintegrasikan seluruh modul, melakukan merge pull request, memastikan build dan Docker berjalan dengan baik, serta mengoordinasikan laporan proyek. |
+| 1  | Alya Deviana Putri Reynaldi | Project Lead / Integrator | Mengkoordinasikan kerja tim, mengatur pembagian tugas, mengintegrasikan seluruh modul, melakukan merge pull request, memastikan build dan Docker berjalan dengan baik. |
 | 2  | Nisa'ul Hidayah             | Developer 1               | Mengimplementasikan modul CPU Scheduling (FCFS) dan melakukan pengujian fungsional modul.                                                                                                                                            |
 | 3  | Latifah Risti Anggraeni     | Developer 2               | Mengimplementasikan modul Page Replacement (FIFO) dan Deadlock Detection, serta memastikan integrasi antar modul berjalan dengan benar.                                                                                          |
 | 4  | Muslimah Nuraini            | Dokumentasi & QA          | Melakukan pengujian menggunakan dataset, menyusun dan merapikan README.md, serta menyiapkan dokumentasi dan screenshot hasil eksekusi aplikasi.    
 
+![Kolaboratif](screenshots/kolaboratif.jpeg)
 
 ---
 
